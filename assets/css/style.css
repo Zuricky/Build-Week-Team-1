@@ -1,0 +1,16 @@
+@keyframes progress {
+    100% {
+        stroke-dashoffset: 1256.12939453125;
+    }
+}
+
+.countdown-container{
+    display: inline-block;
+    position:relative;
+    
+}
+
+.countdown-container p{
+    font-size: 0.2em;
+    text-align: center;
+}
