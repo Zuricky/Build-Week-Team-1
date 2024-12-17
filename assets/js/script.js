@@ -131,13 +131,14 @@ const loadQuestion = (i) => {
   // Combina le risposte e le mischia
   const answers = shuffle([question.correct_answer, ...question.incorrect_answers]);
 
-  // Crea i bottoni
-  answers.forEach((answer) => {
-      const button = document.createElement("button");
-      button.textContent = answer;
-      button.onclick = () => checkAnswer(answer, question.correct_answer);
-      optionsContainer.appendChild(button);
-  });
+    // Crea i bottoni
+    answers.forEach((answer) => {
+        const button = document.createElement("button");
+        button.classList.add('answerButton')  //MODIFICA !!!!
+        button.textContent = answer;
+        button.onclick = () => checkAnswer(answer, question.correct_answer);
+        optionsContainer.appendChild(button);
+    });
 
   // Numero domanda
   questionNumDisplay.textContent = `QUESTION ${i + 1}/${questions.length}`;
