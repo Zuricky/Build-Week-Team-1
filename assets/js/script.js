@@ -123,6 +123,7 @@ const loadQuestion = (i) => {
     // Crea i bottoni
     answers.forEach((answer) => {
         const button = document.createElement("button");
+        button.classList.add('answerButton')  //MODIFICA !!!!
         button.textContent = answer;
         button.onclick = () => checkAnswer(answer, question.correct_answer);
         optionsContainer.appendChild(button);
