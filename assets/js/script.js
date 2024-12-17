@@ -160,6 +160,7 @@ const nextQuestion = () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         loadQuestion(currentQuestionIndex);
+        countDown()
         //timeLeft = ?;
     } else {
         endQuiz();
