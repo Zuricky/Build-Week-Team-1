@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Test</title>
 </head>
@@ -14,16 +19,29 @@
             <img src="assets/img/epicode_logo.png" alt="Logo Epicode">
         </div>
     </header>
-    <div id="timer"></div>
+    <div class="countdown-container" data-duration="30" data-transition="linear" data-color="#00ffff" data-size="150"
+        data-position="right">
+        
+    </div>
     <main>
-        <h1>H</h1>
-        <input type="button">
-        <input type="button">
-        <input type="button">
-        <input type="button">
+        <div class="quiz-container">
+            <h1 id="question-text"></h1>
+            <div id="options-container">
+                <!-- Bottoni -->
+            </div>
+        </div>
+        <div>
+            <div id="result-container">
+                <h2 id="result-text"></h2>
+                <p id="correct-percentage"></p>
+                <p id="wrong-percentage"></p>
+                <p id="correctNumber"></p>
+                <p id="wrongNumber"></p>
+            </div>
+        </div>
     </main>
     <footer>
-        <div></div>
+        <div id="question-number"></div>
     </footer>
     <script src="assets/js/script.js"></script>
 </body>
