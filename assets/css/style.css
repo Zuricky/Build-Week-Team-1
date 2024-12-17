@@ -1,22 +1,36 @@
-/*TIMER Andrea*/
-@keyframes progress {
-    100% {
-        stroke-dashoffset: 1256.12939453125;
+.circle {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    border: 1em solid #00ffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+            
+        }
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    border-top:1em solid #0235ac9b;
+    border-right:1em solid transparent;
+    animation: countdown 30s linear infinite forwards;
+        }
+@keyframes countdown {
+    from {
+        transform: rotate(0deg);
     }
-}
+    to {
+        transform: rotate(360deg);
+    }
+        }
 
-.countdown-container{
-    display: inline-block;
-    position:relative;
-    
-}
-
-.countdown-container p{
-    font-size: 0.2em;
-    text-align: center;
-}
-
-/*WELCOME PAGE*/
+#timer {
+    font-size: 2em;
+        }
 
 body {
     margin: auto;
