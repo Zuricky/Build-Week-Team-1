@@ -14,3 +14,81 @@
     font-size: 0.2em;
     text-align: center;
 }
+body {
+    margin: auto;
+    padding: 0 5rem;
+    position:relative;
+    height: 100%;
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size:cover;
+    color: white;
+    font-family: 'Inter';
+    font-size: 16px;
+    line-height: 1.2rem;
+}
+
+h1 {
+    font-family: 'Outfit';
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 2.7rem;
+}
+
+#welcome-h1 h1 {
+    padding: 1.5rem 0
+}
+
+h2 {
+    font-family: 'Outfit';
+    color: #D20094;
+    padding: 0.9rem 0;
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+
+span {
+    font-weight: bold;
+}
+
+header div img {
+    width: 7.9rem;
+    padding: 3rem 0;
+}
+
+ul {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-bottom: 4rem;
+}
+
+footer div {
+    display: inline;
+    width: fit-content;
+}
+
+.blueButton {
+    background-color: #00FFFF;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 0.7rem 2.7rem;
+    box-shadow: 0px 0px 15px 3px #00FFFF;
+    border-style: none;
+    cursor: pointer;
+    float: right;
+}
+
+.styledCheckbox {
+    appearance: none;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.1em solid currentColor;
+    transform: translateY(0.4em);
+    cursor: pointer;
+    /*display: grid;    !!!Per ora scombina tutto*/
+    place-content: center;
+}
+
+
