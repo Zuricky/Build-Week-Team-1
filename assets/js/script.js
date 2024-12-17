@@ -202,6 +202,37 @@ const endQuiz = () => {
 
   const resultText = document.querySelector("#result-text");
   resultText.textContent = messaggio;
+  // Crea il grafico
+  const ctx = document.getElementById('result-chart').getContext('2d');
+  const resultChart = new Chart(ctx, {
+    type: 'doughnut', // Tipo di grafico (a torta)
+    data: {
+      labels: ['Correct', 'Wrong'], // Etichette
+      datasets: [{
+        label: 'Quiz Results',
+        data: [correctPercentage, wrongPercentage], // Dati da visualizzare
+        backgroundColor: ['#4caf50', '#f44336'], // Colori
+        borderColor: ['#388e3c', '#d32f2f'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+              const percentage = context.raw.toFixed(2);
+              return `${context.label}: ${percentage}%`;
+            }
+          }
+        }
+      }
+    }
+  });
   optionsContainer.innerHTML = "";
   
 };
