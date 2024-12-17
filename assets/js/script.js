@@ -122,8 +122,7 @@ const loadQuestion = (i) => {
 
   questionText.style.display = "block"; 
   optionsContainer.style.display = "block";
-    const question = questions[i];
-    questionText.textContent = question.question;
+
     
 
     // Rimuove le opzioni precedenti
