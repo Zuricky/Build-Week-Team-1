@@ -98,7 +98,7 @@ const questions = [
         correct_answer: "Java",
         incorrect_answers: ["Python", "C", "Jakarta"],
     },
-  ]
+]
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -114,22 +114,22 @@ const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);;
 const loadQuestion = (i) => {
 
 
-  const question = questions[i];
-  questionText.textContent = question.question;
-
-  // Rimuove le opzioni precedenti
-  optionsContainer.innerHTML = "";
-
-  questionText.style.display = "block"; 
-  optionsContainer.style.display = "block";
-
-    
+    const question = questions[i];
+    questionText.textContent = question.question;
 
     // Rimuove le opzioni precedenti
     optionsContainer.innerHTML = "";
 
-  // Combina le risposte e le mischia
-  const answers = shuffle([question.correct_answer, ...question.incorrect_answers]);
+    questionText.style.display = "block";
+    optionsContainer.style.display = "block";
+
+
+
+    // Rimuove le opzioni precedenti
+    optionsContainer.innerHTML = "";
+
+    // Combina le risposte e le mischia
+    const answers = shuffle([question.correct_answer, ...question.incorrect_answers]);
 
     // Crea i bottoni
     answers.forEach((answer) => {
@@ -140,8 +140,8 @@ const loadQuestion = (i) => {
         optionsContainer.appendChild(button);
     });
 
-  // Numero domanda
-  questionNumDisplay.textContent = `QUESTION ${i + 1}/${questions.length}`;
+    // Numero domanda
+    questionNumDisplay.textContent = `QUESTION ${i + 1}/${questions.length}`;
 
 };
 
@@ -159,131 +159,110 @@ const checkAnswer = (selectedAnswer, correctAnswer) => {
     }
     setTimeout(nextQuestion, 1000);
 
-  questionText.style.display = "none";
-  optionsContainer.style.display = "none";
-
-  // Disable all buttons
-  Array.from(optionsContainer.children).forEach((button) => {
-      button.disabled = true;
-  });
-
-  // Modifica il puteggio se corretto
-  if (selectedAnswer === correctAnswer) {
-      score += 1;
-  }
-  setTimeout(nextQuestion, 1000);
-
+    questionText.style.display = "none";
+    optionsContainer.style.display = "none";
 };
 
 // Domanda successiva
 const nextQuestion = () => {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-      loadQuestion(currentQuestionIndex);
-      //timeLeft = ?;
-  } else {
-      endQuiz();
-  }
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         loadQuestion(currentQuestionIndex);
-        countDown();
-        
-         //timeLeft = ?;
+        //timeLeft = ?;
     } else {
         endQuiz();
     }
-    
+
 };
 
 
 const endQuiz = () => {
 
-  questionText.style.display = "none";
-  optionsContainer.style.display = "none";
-  questionNumDisplay.style.display = "none"; 
+    questionText.style.display = "none";
+    optionsContainer.style.display = "none";
+    questionNumDisplay.style.display = "none";
 
 
 
-  const correctPercentage = (score / questions.length) * 100;
+    const correctPercentage = (score / questions.length) * 100;
 
-      const correctPercentageText = document.querySelector("#correct-percentage");
-      correctPercentageText.textContent = `Correct: ${correctPercentage.toFixed(2)}%`;
+    const correctPercentageText = document.querySelector("#correct-percentage");
+    correctPercentageText.textContent = `Correct: ${correctPercentage.toFixed(2)}%`;
 
-  const correctAnswersN = document.querySelector("#correctNumber");
-  correctAnswersN.textContent = `${score} /${questions.length}.`;
+    const correctAnswersN = document.querySelector("#correctNumber");
+    correctAnswersN.textContent = `${score} /${questions.length}.`;
 
 
 
-  const wrongPercentage = ((questions.length - score) / questions.length) * 100;
+    const wrongPercentage = ((questions.length - score) / questions.length) * 100;
 
-      const wrongPercentageText = document.querySelector("#wrong-percentage");
-      wrongPercentageText.textContent = `Wrong: ${wrongPercentage.toFixed(2)}%`;
-  
-  const wrongAnswers = questions.length - score;
+    const wrongPercentageText = document.querySelector("#wrong-percentage");
+    wrongPercentageText.textContent = `Wrong: ${wrongPercentage.toFixed(2)}%`;
 
-  const wrongAnswersN = document.querySelector("#wrongNumber");
-  wrongAnswersN.textContent = ` ${wrongAnswers}/${questions.length}.`;
-       
-  let messaggio;
-  if (score > questions.length / 2) {
-      messaggio = "Congratulations! You passed the exam. We'll send you the certification in few minutes. Check your email.";
-  } else {
-      messaggio = "You didn't pass the exam. We'll send you instructions on how to retake the test.";
-  }
+    const wrongAnswers = questions.length - score;
 
-  const resultText = document.querySelector("#result-text");
-  resultText.textContent = messaggio;
-  // Crea il grafico
-  const ctx = document.getElementById('result-chart').getContext('2d');
-  const resultChart = new Chart(ctx, {
-    type: 'doughnut', // Tipo di grafico (a torta)
-    data: {
-      labels: ['Correct', 'Wrong'], // Etichette
-      datasets: [{
-        label: 'Quiz Results',
-        data: [correctPercentage, wrongPercentage], // Dati da visualizzare
-        backgroundColor: ['#4caf50', '#f44336'], // Colori
-        borderColor: ['#388e3c', '#d32f2f'],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'top',
-        },
-        tooltip: {
-          callbacks: {
-            label: (context) => {
-              const percentage = context.raw.toFixed(2);
-              return `${context.label}: ${percentage}%`;
-            }
-          }
-        }
-      }
+    const wrongAnswersN = document.querySelector("#wrongNumber");
+    wrongAnswersN.textContent = ` ${wrongAnswers}/${questions.length}.`;
+
+    let messaggio;
+    if (score > questions.length / 2) {
+        messaggio = "Congratulations! You passed the exam. We'll send you the certification in few minutes. Check your email.";
+    } else {
+        messaggio = "You didn't pass the exam. We'll send you instructions on how to retake the test.";
     }
-  });
-  optionsContainer.innerHTML = "";
-  
+
+    const resultText = document.querySelector("#result-text");
+    resultText.textContent = messaggio;
+    // Crea il grafico
+    const ctx = document.getElementById('result-chart').getContext('2d');
+    const resultChart = new Chart(ctx, {
+        type: 'doughnut', // Tipo di grafico (a torta)
+        data: {
+            labels: ['Correct', 'Wrong'], // Etichette
+            datasets: [{
+                label: 'Quiz Results',
+                data: [correctPercentage, wrongPercentage], // Dati da visualizzare
+                backgroundColor: ['#4caf50', '#f44336'], // Colori
+                borderColor: ['#388e3c', '#d32f2f'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (context) => {
+                            const percentage = context.raw.toFixed(2);
+                            return `${context.label}: ${percentage}%`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    optionsContainer.innerHTML = "";
+
 };
 
 loadQuestion(currentQuestionIndex);
 
 function countDown() {
-  let timeLeft = 30;
-        const timerDisplay = document.getElementById('timer');
-        
-        const countdown = setInterval(() => {
-            if (timeLeft < 0) {
-                clearInterval(countdown);
-                nextQuestion()
-            }else {
-                timerDisplay.textContent = timeLeft;
-            }
-            timeLeft -= 1;
-        }, 1000);
+    let timeLeft = 30;
+    const timerDisplay = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+        if (timeLeft < 0) {
+            clearInterval(countdown);
+            nextQuestion()
+        } else {
+            timerDisplay.textContent = timeLeft;
+        }
+        timeLeft -= 1;
+    }, 1000);
 }
 
 countDown()
