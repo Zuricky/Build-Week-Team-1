@@ -123,8 +123,6 @@ const loadQuestion = (i) => {
   questionText.style.display = "block"; 
   optionsContainer.style.display = "block";
 
-    
-
     // Rimuove le opzioni precedenti
     optionsContainer.innerHTML = "";
 
@@ -162,7 +160,6 @@ const checkAnswer = (selectedAnswer, correctAnswer) => {
   questionText.style.display = "none";
   optionsContainer.style.display = "none";
 
-  
 };
 
 // Domanda successiva
