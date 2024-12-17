@@ -112,8 +112,6 @@ const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);;
 
 // Imposta la domanda
 const loadQuestion = (i) => {
-
-
     const question = questions[i];
     questionText.textContent = question.question;
 
@@ -122,11 +120,6 @@ const loadQuestion = (i) => {
 
     questionText.style.display = "block";
     optionsContainer.style.display = "block";
-
-
-
-    // Rimuove le opzioni precedenti
-    optionsContainer.innerHTML = "";
 
     // Combina le risposte e le mischia
     const answers = shuffle([question.correct_answer, ...question.incorrect_answers]);
@@ -148,7 +141,6 @@ const loadQuestion = (i) => {
 // Controlla la risposta e disabilita i bottoni
 const checkAnswer = (selectedAnswer, correctAnswer) => {
 
-    // Disable all buttons
     Array.from(optionsContainer.children).forEach((button) => {
         button.disabled = true;
     });
@@ -175,13 +167,11 @@ const nextQuestion = () => {
 
 };
 
-
 const endQuiz = () => {
 
     questionText.style.display = "none";
     optionsContainer.style.display = "none";
     questionNumDisplay.style.display = "none";
-
 
 
     const correctPercentage = (score / questions.length) * 100;
@@ -191,7 +181,6 @@ const endQuiz = () => {
 
     const correctAnswersN = document.querySelector("#correctNumber");
     correctAnswersN.textContent = `${score} /${questions.length}.`;
-
 
 
     const wrongPercentage = ((questions.length - score) / questions.length) * 100;
@@ -213,6 +202,7 @@ const endQuiz = () => {
 
     const resultText = document.querySelector("#result-text");
     resultText.textContent = messaggio;
+
     // Crea il grafico
     const ctx = document.getElementById('result-chart').getContext('2d');
     const resultChart = new Chart(ctx, {
