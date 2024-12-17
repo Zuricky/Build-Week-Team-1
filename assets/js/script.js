@@ -162,17 +162,7 @@ const checkAnswer = (selectedAnswer, correctAnswer) => {
   questionText.style.display = "none";
   optionsContainer.style.display = "none";
 
-  // Disable all buttons
-  Array.from(optionsContainer.children).forEach((button) => {
-      button.disabled = true;
-  });
-
-  // Modifica il puteggio se corretto
-  if (selectedAnswer === correctAnswer) {
-      score += 1;
-  }
-  setTimeout(nextQuestion, 1000);
-
+  
 };
 
 // Domanda successiva
@@ -184,16 +174,7 @@ const nextQuestion = () => {
   } else {
       endQuiz();
   }
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion(currentQuestionIndex);
-        countDown();
-        
-         //timeLeft = ?;
-    } else {
-        endQuiz();
-    }
-    
+       
 };
 
 
