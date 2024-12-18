@@ -317,6 +317,12 @@ function startTimer() {
   timePassed = 0;
   timeLeft = TIME_LIMIT;
   document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
+  
+  document .getElementById("base-timer-path-remaining") 
+  .classList.remove(COLOR_CODES.warning.color, COLOR_CODES.alert.color); 
+  document .getElementById("base-timer-path-remaining") 
+  .classList.add(remainingPathColor);
+  
   timerInterval = setInterval(() => {
     timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
@@ -336,14 +342,13 @@ function onTimesUp() {
 }
 
 function formatTime(time) {
-  const minutes = Math.floor(time / 60);
+  
   let seconds = time % 60;
-
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
 
-  return `${minutes}:${seconds}`;
+  return `${seconds}`; 
 }
 
 function setRemainingPathColor(timeLeft) {
