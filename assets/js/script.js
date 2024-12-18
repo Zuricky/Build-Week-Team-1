@@ -237,28 +237,11 @@ const endQuiz = () => {
     optionsContainer.innerHTML = "";
     const blueButton2 = document.getElementById("blueButton2");
     blueButton2.style.display = "block";
+
+   
 };
 
-
-
-/* function countDown() {
-    let timeLeft = 30;
-    const timerDisplay = document.getElementById('timer');
-
-    const countdown = setInterval(() => {
-        if (timeLeft < 0) {
-            clearInterval(countdown);
-            nextQuestion()
-        } else {
-            timerDisplay.textContent = timeLeft;
-        }
-        timeLeft -= 1;
-    }, 1000);
-}
-
-countDown() */
-
-
+/* timer */
 
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -302,9 +285,7 @@ document.getElementById("app").innerHTML = `
       ></path>
     </g>
   </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-  )}</span>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(timeLeft)}</span>
 </div>
 `;
 

@@ -1,91 +1,61 @@
-/* .circle {
-    width: 8em;
-    height: 8em;
-    border-radius: 50%;
-    border: 1em solid #00ffff;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-            
-        }
-.circle::before {
-    content: '';
-    position: absolute;
-    width: 8em;
-    height: 8em;
-    border-radius: 50%;
-    border-top:1em solid #0235ac9b;
-    border-right:1em solid transparent;
-    animation: countdown 30s linear infinite forwards;
-        }
-@keyframes countdown {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-        }
 
-#timer {
-    font-size: 2em;
-        } */
+.base-timer {
+  
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 10%; 
+  top: 15%; 
+  transform: translateY(-50%); 
+  
+}
 
-        .base-timer {
-          position: relative;
-          width: 300px;
-          height: 300px;
-        }
-        
-        .base-timer__svg {
-          transform: scaleX(-1);
-        }
-        
-        .base-timer__circle {
-          fill: none;
-          stroke: none;
-        }
-        
-        .base-timer__path-elapsed {
-          stroke-width: 7px;
-          stroke: grey;
-        }
-        
-        .base-timer__path-remaining {
-          stroke-width: 7px;
-          stroke-linecap: round;
-          transform: rotate(90deg);
-          transform-origin: center;
-          transition: 1s linear all;
-          fill-rule: nonzero;
-          stroke: currentColor;
-        }
-        
-        .base-timer__path-remaining.green {
-          color: rgb(0, 255, 255);
-        }
-        
-        .base-timer__path-remaining.orange {
-          color: orange;
-        }
-        
-        .base-timer__path-remaining.red {
-          color: red;
-        }
-        
-        .base-timer__label {
-          position: absolute;
-          width: 300px;
-          height: 300px;
-          top: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 48px;
-        }
-        
-        
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: rgba(211, 211, 211, 0.144)
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(0, 255, 255);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
 
 body {
     margin: auto;
