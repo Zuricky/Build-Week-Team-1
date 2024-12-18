@@ -119,9 +119,13 @@ footer div {
     box-shadow: 0px 0px 15px 3px #00FFFF;
     border-style: none;
     cursor: pointer;
+  
+}
+#blueButton2 {
+  text-align: center;
 }
 
-#blueButton1 {
+#blueButton1 a {
     transform: translateY(-2em);
     float: right;
 }
@@ -281,3 +285,47 @@ textarea {
 
 /* #result-chart{
 } */
+
+  #giuste {
+    display: block;
+    text-align: right;
+    float: right;
+    padding: 1em;
+
+  }
+
+  #correct-percentage {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1em;
+    padding: 1em 0em;
+  }
+
+  #sbagliate {
+    display: block;
+    text-align: left;
+    float: left;
+    padding: 1em;
+  }
+
+  #wrong-percentage {
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1em;
+    padding: 1em 0em;
+  }
+
+  #result-text {
+    margin-top: 10;
+    padding: 3em;
+    line-height: 1em;
+
+  }
+
+  #result-chart {
+    padding: 0;
+    display: block;
+    height: 300px;
+    line-height: 4em;
+  }
+
