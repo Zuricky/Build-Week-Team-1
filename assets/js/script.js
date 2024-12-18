@@ -100,6 +100,13 @@ const questions = [
     },
 ]
 
+let checkbox = document.getElementById('styledCheckbox');
+let blueButton = document.getElementById('blueButton1');
+
+checkbox.addEventListener('change', function () {
+blueButton.disabled = !checkbox.checked;
+});
+
 let currentQuestionIndex = 0;
 let score = 0;
 
