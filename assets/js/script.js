@@ -160,7 +160,9 @@ const nextQuestion = () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         loadQuestion(currentQuestionIndex);
+        onTimesUp()
         startTimer()
+        
         //timeLeft = ?;
     } else {
         endQuiz();
@@ -258,8 +260,7 @@ loadQuestion(currentQuestionIndex);
 
 countDown() */
 
-// Credit: Mateusz Rybczonec
-// https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/
+
 
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -267,7 +268,7 @@ const ALERT_THRESHOLD = 5;
 
 const COLOR_CODES = {
   info: {
-    color: "#00ffff"
+    color: "green"
   },
   warning: {
     color: "orange",
@@ -328,6 +329,7 @@ function startTimer() {
     if (timeLeft === 0) {
       onTimesUp();
       nextQuestion();
+      startTimer()
     }
   }, 1000);
 }
