@@ -102,16 +102,22 @@ const questions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
+let countdown;
+let timeLeft = 30;
+let isReadyForNextQuestion = true;
 
 const questionText = document.querySelector("#question-text");
 const optionsContainer = document.querySelector("#options-container");
 const questionNumDisplay = document.querySelector("#question-number");
+const timerDisplay = document.getElementById('timer');
 
 // Mischia le risposte
 const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);;
 
 // Imposta la domanda
 const loadQuestion = (i) => {
+    isReadyForNextQuestion = false; 
+
     const question = questions[i];
     questionText.textContent = question.question;
 
@@ -136,10 +142,17 @@ const loadQuestion = (i) => {
     // Numero domanda
     questionNumDisplay.textContent = `QUESTION ${i + 1}/${questions.length}`;
 
+    requestAnimationFrame(() => {
+        isReadyForNextQuestion = true;
+        timeLeft = 30;
+        countDown(); 
+    });
 };
 
 // Controlla la risposta e disabilita i bottoni
 const checkAnswer = (selectedAnswer, correctAnswer) => {
+
+    clearInterval(countdown);
 
     Array.from(optionsContainer.children).forEach((button) => {
         button.disabled = true;
@@ -160,12 +173,9 @@ const nextQuestion = () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         loadQuestion(currentQuestionIndex);
-        countDown()
-        //timeLeft = ?;
     } else {
-        endQuiz();
+        endQuiz();  
     }
-
 };
 
 const endQuiz = () => {
@@ -239,21 +249,23 @@ const endQuiz = () => {
 
 };
 
-loadQuestion(currentQuestionIndex);
-
 function countDown() {
-    let timeLeft = 30;
-    const timerDisplay = document.getElementById('timer');
+   
+ clearInterval(countdown);
 
-    const countdown = setInterval(() => {
-        if (timeLeft < 0) {
-            clearInterval(countdown);
-            nextQuestion()
-        } else {
-            timerDisplay.textContent = timeLeft;
+    countdown = setInterval(() => {
+     
+        if (isReadyForNextQuestion) {
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                nextQuestion();
+            } else {
+                timerDisplay.textContent = timeLeft; 
+            }
+            timeLeft -= 1;
         }
-        timeLeft -= 1;
     }, 1000);
 }
 
 countDown()
+loadQuestion(currentQuestionIndex);
