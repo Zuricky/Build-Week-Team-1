@@ -160,10 +160,7 @@ const nextQuestion = () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         loadQuestion(currentQuestionIndex);
-        onTimesUp()
-        startTimer()
-        
-        //timeLeft = ?;
+        startTimer();
     } else {
         endQuiz();
     }
@@ -241,7 +238,7 @@ const endQuiz = () => {
 
 };
 
-loadQuestion(currentQuestionIndex);
+
 
 /* function countDown() {
     let timeLeft = 30;
@@ -310,28 +307,31 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-startTimer();
-
-function onTimesUp() {
-  clearInterval(timerInterval);
+function stopTimer() {
+  clearInterval(timerInterval); // Ferma il timer
 }
 
 function startTimer() {
+  stopTimer(); // Ferma il timer precedente
+  timePassed = 0;
+  timeLeft = TIME_LIMIT;
+  document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
   timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
+    timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(
-      timeLeft
-    );
+    document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
 
     if (timeLeft === 0) {
       onTimesUp();
-      nextQuestion();
-      startTimer()
     }
   }, 1000);
+}
+
+function onTimesUp() {
+  stopTimer(); // Ferma il timer quando il tempo è scaduto
+  nextQuestion(); // Passa alla domanda successiva
 }
 
 function formatTime(time) {
@@ -377,3 +377,6 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+loadQuestion(currentQuestionIndex);
+startTimer();
