@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Review</title>
 </head>
@@ -21,30 +20,25 @@
         </div>
     </header>
     <main>
-        <h1><span>Tell us how it's going</span></h1>
-        <p>From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
-        <div></div>
-        <form>
-            <p>Leave us an open feedback about your experience so far</p>
-           
-        </form>
-        <h2>Tell us how it's going</h2>
-        <p>From 0 to 10, how likely are you to recommernd EPICODE <br> to a friend or a colleague?</p>
+        <h2 class="review" id="reviewTitle">Tell us how it's going</h2>
+        <p class="review">From 0 to 10, how likely are you to recommernd EPICODE <br> to a friend or a colleague?</p>
 
         <div id="star-container">
 
         </div> 
 
         <div class="feedback">
-            <label for="commento">Leave us an open feedback about your experience so far</label>
+            <label for="commento" class="review">Leave us an open feedback about your experience so far</label>
             <br>
             <textarea id="commento" placeholder="Write your comment here"></textarea>
         </div>
     </main>
     <footer>
-        <a href="https://epicode.com">
-            <input class="blueButton" type="button" value="More Info" id="blueButton3">
-        </a>
+        <div id="blueButton3Cont">
+            <a href="https://epicode.com">
+                <input class="blueButton" type="button" value="More Info" id="blueButton3">
+            </a>
+        </div>
     </footer>
     <script>
         const stars = [];

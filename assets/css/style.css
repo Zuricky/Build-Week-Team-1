@@ -269,3 +269,28 @@ textarea {
   textarea::placeholder {
     color: #aaa;
   }
+
+.review, .feedback, #star-container{
+    text-align: center;
+    font-size: 110%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    line-height: 1.7rem;
+}
+
+#blueButton3Cont{
+  margin-right: 45%;
+  margin-left: 45%;
+}
+
+#reviewTitle{
+  color: white;
+  font-weight: 600;
+  font-size: 250%;
+}
+
+#commento{
+  padding-top: 2%;
+  padding-bottom: 0%;
+}
