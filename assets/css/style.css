@@ -125,7 +125,7 @@ footer div {
   text-align: center;
 }
 
-#blueButton1 a {
+#blueButton1 {
     transform: translateY(-2em);
     float: right;
 }
@@ -290,8 +290,8 @@ textarea {
     display: block;
     text-align: right;
     float: right;
-    padding: 1em;
-
+    padding: 1em 11em 1em 1em;
+    transform: translateY(-13.5em);
   }
 
   #correct-percentage {
@@ -305,7 +305,8 @@ textarea {
     display: block;
     text-align: left;
     float: left;
-    padding: 1em;
+    padding: 1em 1em 1em 11em;
+    transform: translateY(-13.5em);
   }
 
   #wrong-percentage {
