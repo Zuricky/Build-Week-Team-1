@@ -283,6 +283,17 @@ textarea {
   font-size: 250%;
 }
 
+.reviewButton {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 0.7rem 3rem;
+  border: 2px white solid;
+  cursor: pointer;
+}
+
 /* #result-chart{
 } */
 
@@ -318,9 +329,10 @@ textarea {
 
   #result-text {
     margin-top: 10;
-    padding: 3em;
     line-height: 1em;
-
+    transform: translateY(-6em);
+    margin-left: 15em;
+    margin-right: 15em;
   }
 
   #result-chart {
