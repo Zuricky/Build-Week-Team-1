@@ -73,8 +73,8 @@ body {
 h1 {
     font-family: 'Outfit';
     font-weight: normal;
-    font-size: 60px;
-    line-height: 2.7rem;
+    font-size: 2em;
+    line-height: 1em;
 }
 
 #welcome-h1 h1 {
@@ -164,7 +164,7 @@ footer div {
   }
 
   footer {
-    padding: 3.4rem 0;
+    padding: 2em 0;
   }
 
   /*EXTRA: checkbox spunta a v*/
@@ -182,12 +182,12 @@ footer div {
   }
 
   #testMain {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
     /*Da aggiustare successivamente*/
   }
 
   #question-text {
-    padding: 4rem 0;
+    padding: 1em;
     margin: 0 10rem;
     line-height: 4rem;
     /*Da aggiustare successivamente*/
