@@ -211,9 +211,11 @@ document.getElementById("app").innerHTML = `
     ></path>
   </g>
 </svg>
+<span id="upperTimerSTR">seconds</span>
 <span id="base-timer-label" class="base-timer__label">${formatTime(
   timeLeft
 )}</span>
+<span id="lowerTimerSTR">remaining</span>
 </div>
 `;
 
