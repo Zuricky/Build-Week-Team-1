@@ -316,7 +316,7 @@ textarea::placeholder {
   text-align: right;
   float: right;
   padding: 1em 11em 1em 1em;
-  transform: translateY(-13.5em);
+ /* transform: translateY(-13.5em);*/
 }
 
 #correct-percentage {
@@ -331,7 +331,7 @@ textarea::placeholder {
   text-align: left;
   float: left;
   padding: 1em 1em 1em 11em;
-  transform: translateY(-13.5em);
+ /* transform: translateY(-13.5em);*/
 }
 
 #wrong-percentage {
@@ -345,6 +345,7 @@ textarea::placeholder {
   margin-top: 10;
   padding: 3em;
   line-height: 1em;
+  display: inline;
 
 }
 
@@ -352,6 +353,4 @@ textarea::placeholder {
   display: none;
 }
 
-#result-text {
-  display: none;
-}
+
