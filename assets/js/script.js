@@ -172,6 +172,7 @@ const endQuiz = () => {
   questionText.style.display = "none";
   optionsContainer.style.display = "none";
   questionNumDisplay.style.display = "none";
+  
 
   const breakLine = document.createElement('br');
 
@@ -197,6 +198,7 @@ const endQuiz = () => {
   wrongAnswersN.textContent = ` ${wrongAnswers}/${questions.length}.`;
   wrongPercentageText.appendChild(breakLine);
 
+
   let messaggio;
   if (score > questions.length / 2) {
       messaggio = "Congratulations! You passed the exam. We'll send you the certification in few minutes. Check your email.";
@@ -204,9 +206,15 @@ const endQuiz = () => {
       messaggio = "You didn't pass the exam. We'll send you instructions on how to retake the test.";
   }
 
+  
   const resultText = document.querySelector("#result-text");
+  resultText.style.display = "block"; 
   resultText.textContent = messaggio;
+ 
 
+  const resultChartDiv = document.getElementById('result-chart');
+ // resultChartDiv.style.visibility = "visible"; 
+ 
   // Crea il grafico
   const ctx = document.getElementById('result-chart').getContext('2d');
   const resultChart = new Chart(ctx, {

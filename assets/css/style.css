@@ -323,9 +323,9 @@ textarea {
   }
 
   #result-chart {
-    padding: 0;
-    display: block;
-    height: 300px;
-    line-height: 4em;
+  display: none;
   }
 
+#result-text{
+  display: none;
+}
