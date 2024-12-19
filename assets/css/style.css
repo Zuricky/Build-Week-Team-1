@@ -125,7 +125,7 @@ footer div {
   text-align: center;
 }
 
-#blueButton1 a {
+#blueButton1 {
     transform: translateY(-2em);
     float: right;
 }
