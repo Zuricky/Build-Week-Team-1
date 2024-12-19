@@ -1,13 +1,12 @@
-
 .base-timer {
-  
+
   position: absolute;
   width: 100px;
   height: 100px;
-  right: 10%; 
-  top: 15%; 
-  transform: translateY(-50%); 
-  
+  right: 10%;
+  top: 15%;
+  transform: translateY(-50%);
+
 }
 
 .base-timer__svg {
@@ -58,275 +57,278 @@
 }
 
 body {
-    margin: auto;
-    padding: 0 5rem;
-    position:relative;
-    height: 100%;
-    background: url(../img/bg.jpg) no-repeat center;
-    background-size:cover;
-    color: white;
-    font-family: 'Inter';
-    font-size: 16px;
-    line-height: 1.2rem;
+  margin: auto;
+  padding: 0 5rem;
+  position: relative;
+  height: 100%;
+  background: url(../img/bg.jpg) no-repeat center;
+  background-size: cover;
+  color: white;
+  font-family: 'Inter';
+  font-size: 16px;
+  line-height: 1.2rem;
 }
 
 h1 {
-    font-family: 'Outfit';
-    font-weight: normal;
-    font-size: 2em;
-    line-height: 1em;
+  font-family: 'Outfit';
+  font-weight: normal;
+  font-size: 2em;
+  line-height: 1em;
 }
 
 #welcome-h1 h1 {
-    padding: 1.5rem 0
+  padding: 1.5rem 0
 }
 
 h2 {
-    font-family: 'Outfit';
-    color: #D20094;
-    padding: 0.9rem 0;
-    font-weight: bold;
-    font-size: 1.9rem;
+  font-family: 'Outfit';
+  color: #D20094;
+  padding: 0.9rem 0;
+  font-weight: bold;
+  font-size: 1.9rem;
 }
 
 span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 header div img {
-    width: 7.9rem;
-    padding: 3rem 0;
+  width: 7.9rem;
+  padding: 3rem 0;
 }
 
 ul {
-    padding-top: 3rem;
-    padding-left: 1rem;
-    padding-bottom: 4rem;
-    line-height: 1.7rem;
+  padding-top: 3rem;
+  padding-left: 1rem;
+  padding-bottom: 4rem;
+  line-height: 1.7rem;
 }
 
 footer div {
-    display: inline;
-    width: fit-content;
+  display: inline;
+  width: fit-content;
 }
 
 .blueButton {
-    background-color: #00FFFF;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    padding: 0.7rem 2.7rem;
-    box-shadow: 0px 0px 15px 3px #00FFFF;
-    border-style: none;
-    cursor: pointer;
-  
+  background-color: #00FFFF;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 0.7rem 2.7rem;
+  box-shadow: 0px 0px 15px 3px #00FFFF;
+  border-style: none;
+  cursor: pointer;
+
 }
+
 #blueButton2 {
   text-align: center;
 }
 
 #blueButton1 {
-    transform: translateY(-2em);
-    float: right;
+  transform: translateY(-2em);
+  float: right;
 }
 
 .styledCheckbox {
-    appearance: none;
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.1em solid currentColor;
-    transform: translateY(-0.1em);
-    cursor: pointer;
-    display: grid;  
-    place-content: center;
+  appearance: none;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.1em solid currentColor;
+  transform: translateY(-0.1em);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
 }
 
 .styledCheckbox::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    background-color: #D20094;
-  }
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: #D20094;
+}
 
-  .styledCheckbox:checked::before {
-    transform: scale(1);
-  }
+.styledCheckbox:checked::before {
+  transform: scale(1);
+}
 
-  .form-control {
-    display: grid;
-    grid-template-columns: 2em auto;
-    gap: 0.5em;
-    margin-top: 1em;
-  }
+.form-control {
+  display: grid;
+  grid-template-columns: 2em auto;
+  gap: 0.5em;
+  margin-top: 1em;
+}
 
-  footer {
-    padding: 2em 0;
-  }
+footer {
+  padding: 2em 0;
+}
 
-  /*EXTRA: checkbox spunta a v*/
+/*EXTRA: checkbox spunta a v*/
 
-  /*TEST PAGE*/
+/*TEST PAGE*/
 
-  #countdown-container {
-    display: inline;
-    float: right;
-    padding: 2rem;
-  }
+#countdown-container {
+  display: inline;
+  float: right;
+  padding: 2rem;
+}
 
-  .testPage {
-    text-align: center;
-  }
+.testPage {
+  text-align: center;
+}
 
-  #testMain {
-    /* padding-top: 2rem; */
-    /*Da aggiustare successivamente*/
-  }
+#testMain {
+  /* padding-top: 2rem; */
+  /*Da aggiustare successivamente*/
+}
 
-  #question-text {
-    padding: 1em;
-    margin: 0 10rem;
-    line-height: 4rem;
-    /*Da aggiustare successivamente*/
-  }
+#question-text {
+  padding: 1em;
+  margin: 0 10rem;
+  line-height: 4rem;
+  /*Da aggiustare successivamente*/
+}
 
-  .answerButton {
-    width: 27rem;
-    height: 5rem;
-    margin: 1rem;
-    border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.answerButton {
+  width: 27rem;
+  height: 5rem;
+  margin: 1rem;
+  border-radius: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  .answerButton:hover {
-    border: 4px solid transparent;
-    background: linear-gradient(rgba(144, 0, 128, 0.8), rgba(210, 0, 148, 0.9)) padding-box,
-                linear-gradient(to top, rgba(144, 0, 128, 0.8), rgba(210, 0, 148, 0.8)) border-box
-  }
+.answerButton:hover {
+  border: 4px solid transparent;
+  background: linear-gradient(rgba(144, 0, 128, 0.8), rgba(210, 0, 148, 0.9)) padding-box,
+    linear-gradient(to top, rgba(144, 0, 128, 0.8), rgba(210, 0, 148, 0.8)) border-box
+}
 
 /*Stanislav: REVIEW STARS*/
 
-.star{
-    display: inline-block;
-    cursor: pointer;
-    stroke: white;
-    stroke-width: 1px;
+.star {
+  display: inline-block;
+  cursor: pointer;
+  stroke: white;
+  stroke-width: 1px;
 }
 
-.star:hover path{
-    fill: #FFFFFF;
+.star:hover path {
+  fill: #FFFFFF;
 }
 
 textarea {
-    width: 80%;
-    max-width: 600px;
-    height: 50px;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-bottom: 2px solid #ff00ff;
-    outline: none;
-    font-size: 16px;
-    color: white;
-    background: transparent;
-    resize: none;
-  }
-
-  textarea::placeholder {
-    color: #aaa;
-  }
-
-.review, .feedback, #star-container{
-    text-align: center;
-    font-size: 110%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    line-height: 1.7rem;
+  width: 80%;
+  max-width: 600px;
+  height: 50px;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 2px solid #ff00ff;
+  outline: none;
+  font-size: 16px;
+  color: white;
+  background: transparent;
+  resize: none;
 }
 
-#blueButton3Cont{
+textarea::placeholder {
+  color: #aaa;
+}
+
+.review,
+.feedback,
+#star-container {
+  text-align: center;
+  font-size: 110%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  line-height: 1.7rem;
+}
+
+#blueButton3Cont {
   margin-right: 45%;
   margin-left: 45%;
 }
 
-#blueButton2{
+#blueButton2 {
   margin: 2rem;
   margin-right: 45%;
   margin-left: 45%;
 }
 
-#reviewTitle{
+#reviewTitle {
   color: white;
   font-weight: 600;
   font-size: 250%;
 }
 
-#commento{
+#commento {
   padding-top: 2%;
   padding-bottom: 0%;
 }
 
-#result-container{
+#result-container {
   line-height: 1.5rem;
 }
 
-#result-container h2{
+#result-container h2 {
   font-size: 250%;
 }
 
 /* #result-chart{
 } */
 
-  #giuste {
-    display: block;
-    text-align: right;
-    float: right;
-    padding: 1em 11em 1em 1em;
-    transform: translateY(-13.5em);
-  }
+#giuste {
+  display: block;
+  text-align: right;
+  float: right;
+  padding: 1em 11em 1em 1em;
+  transform: translateY(-13.5em);
+}
 
-  #correct-percentage {
-    font-size: 2em;
-    font-weight: bold;
-    line-height: 1em;
-    padding: 1em 0em;
-  }
+#correct-percentage {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 1em 0em;
+}
 
-  #sbagliate {
-    display: block;
-    text-align: left;
-    float: left;
-    padding: 1em 1em 1em 11em;
-    transform: translateY(-13.5em);
-  }
+#sbagliate {
+  display: block;
+  text-align: left;
+  float: left;
+  padding: 1em 1em 1em 11em;
+  transform: translateY(-13.5em);
+}
 
-  #wrong-percentage {
-    font-size: 2em;
-    font-weight: bold;
-    line-height: 1em;
-    padding: 1em 0em;
-  }
+#wrong-percentage {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 1em 0em;
+}
 
-  #result-text {
-    margin-top: 10;
-    padding: 3em;
-    line-height: 1em;
+#result-text {
+  margin-top: 10;
+  padding: 3em;
+  line-height: 1em;
 
-  }
+}
 
-  #result-chart {
+#result-chart {
   display: none;
-  }
+}
 
-#result-text{
+#result-text {
   display: none;
 }
