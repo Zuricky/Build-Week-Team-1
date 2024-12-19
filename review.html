@@ -21,16 +21,14 @@
     </header>
     <main>
         <h2 class="review" id="reviewTitle">Tell us how it's going</h2>
-        <p class="review">From 0 to 10, how likely are you to recommernd EPICODE <br> to a friend or a colleague?</p>
+        <p class="review">From 0 to 10, how likely are you to recommend EPICODE <br> to a friend or a colleague?</p>
 
-        <div id="star-container">
-
-        </div> 
+        <div id="star-container"></div>
 
         <div class="feedback">
             <label for="commento" class="review">Leave us an open feedback about your experience so far</label>
             <br>
-            <textarea id="commento" placeholder="Write your comment here"></textarea>
+            <textarea id="commento" placeholder="Write your comment here" required></textarea>
         </div>
     </main>
     <footer>
@@ -75,6 +73,19 @@
             }
             });
         });
+        });
+
+        document.getElementById("commento").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                const comment = event.target.value.trim();
+                if (comment !== "") {
+                    event.target.value = ""; 
+                    alert("Feedback inviato!");
+                    
+                } else {
+                    alert("Per favore, lascia un commento.");
+                }
+            }
         });
     </script>
     <style>
