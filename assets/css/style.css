@@ -56,7 +56,7 @@
   font-size: 30px;
 }
 
-#lowerTimerSTR{
+#lowerTimerSTR {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -67,7 +67,7 @@
   font-size: 10px;
 }
 
-#upperTimerSTR{
+#upperTimerSTR {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -308,15 +308,20 @@ textarea::placeholder {
   font-size: 250%;
 }
 
-/* #result-chart{
-} */
+#result-chart {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  max-height: 300px;
+  margin: 0 auto;
+}
 
 #giuste {
   display: block;
   text-align: right;
   float: right;
   padding: 1em 11em 1em 1em;
- /* transform: translateY(-13.5em);*/
+  /* transform: translateY(-13.5em);*/
 }
 
 #correct-percentage {
