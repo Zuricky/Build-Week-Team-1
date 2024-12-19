@@ -323,9 +323,5 @@ textarea {
   }
 
   #result-chart {
-  display: none;
-  }
-
-#result-text{
-  display: none;
+    display: block; 
 }

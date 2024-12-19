@@ -20,14 +20,52 @@
         </div>
     </header>
     <main>
-        <h1>Results</h1>
-        <p>T</p>
+         
+        <div>
+             <canvas id="result-chart" width="300" height="300" ></canvas>
+             <div id="result-container">
+                 <div id="giuste">
+                     <p id="correct-percentage"></p>  
+                     <p id="correctNumber"></p>
+                 </div>
+                 <div id="sbagliate">
+                     <p id="wrong-percentage"></p>
+                     <p id="wrongNumber"></p>
+                 </div>
+             </div>
+             <div>
+                 <h2 id="result-text"></h2>
+             </div>
+         </div>
+
     </main>
     <div></div>
     <footer>
-        <button></button>
+        <a href="./review.html" style="text-decoration: none;"> 
+            <input class="blueButton" type="button" value="rate us" id="blueButton2" style="display: inline;">
+        </a>
     </footer>
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    window.onload = function() {
+      
+      const quizResults = JSON.parse(localStorage.getItem("quizResults"));
+
+      if (quizResults) {
+       
+        document.getElementById("correct-percentage").innerHTML = `Correct:<br>${quizResults.correctPercentage}%`;
+        document.getElementById("correctNumber").textContent = `${quizResults.correctAnswers} / ${quizResults.totalQuestions}`;
+        document.getElementById("wrong-percentage").innerHTML = `Wrong:<br>${quizResults.wrongPercentage}%`;
+        document.getElementById("wrongNumber").textContent = `${quizResults.wrongAnswers} / ${quizResults.totalQuestions}`;
+        document.getElementById("result-text").textContent = quizResults.passed
+        ? "Congratulations! You passed the exam. We'll send you the certification in few minutes. Check your email." 
+        : "You didn't pass the exam. We'll send you instructions on how to retake the test.";
+      } else {
+        document.getElementById("result-text").textContent = "No quiz results found.";
+      }
+    };
+  </script>
 </body>
 
 </html>

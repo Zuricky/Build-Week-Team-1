@@ -167,96 +167,6 @@ const nextQuestion = () => {
 
 };
 
-const endQuiz = () => {
-
-  questionText.style.display = "none";
-  optionsContainer.style.display = "none";
-  questionNumDisplay.style.display = "none";
-  
-
-  const breakLine = document.createElement('br');
-
-  const appElement = document.getElementById('app');
-  appElement.style.display = 'none';
-  
-  const correctPercentage = (score / questions.length) * 100;
-
-  const correctPercentageText = document.querySelector("#correct-percentage");
-  correctPercentageText.innerHTML = `Correct:<br> ${correctPercentage.toFixed(2)}%`;
-
-  const correctAnswersN = document.querySelector("#correctNumber");
-  correctAnswersN.textContent = `${score} /${questions.length}.`;
-
-  const wrongPercentage = ((questions.length - score) / questions.length) * 100;
-
-  const wrongPercentageText = document.querySelector("#wrong-percentage");
-  wrongPercentageText.innerHTML = `Wrong:<br> ${wrongPercentage.toFixed(2)}%`;
-
-  const wrongAnswers = questions.length - score;
-
-  const wrongAnswersN = document.querySelector("#wrongNumber");
-  wrongAnswersN.textContent = ` ${wrongAnswers}/${questions.length}.`;
-  wrongPercentageText.appendChild(breakLine);
-
-
-  let messaggio;
-  if (score > questions.length / 2) {
-      messaggio = "Congratulations! You passed the exam. We'll send you the certification in few minutes. Check your email.";
-  } else {
-      messaggio = "You didn't pass the exam. We'll send you instructions on how to retake the test.";
-  }
-
-  
-  const resultText = document.querySelector("#result-text");
-  resultText.style.display = "block"; 
-  resultText.textContent = messaggio;
- 
-
-  const resultChartDiv = document.getElementById('result-chart');
- // resultChartDiv.style.visibility = "visible"; 
- 
-  // Crea il grafico
-  const ctx = document.getElementById('result-chart').getContext('2d');
-  const resultChart = new Chart(ctx, {
-      type: 'doughnut', // Tipo di grafico (a torta)
-      data: {
-          labels: ['Correct', 'Wrong'], // Etichette
-          datasets: [{
-              label: 'Quiz Results',
-              data: [correctPercentage, wrongPercentage], // Dati da visualizzare
-              backgroundColor: ['#00FFFF', '#D20094'], // Colori
-              borderColor: ['#00FFFF', '#D20094'],
-              borderWidth: 2
-          }]
-      },
-      options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-              legend: {
-                  position: 'top',
-              },
-              tooltip: {
-                  callbacks: {
-                      label: (context) => {
-                          const percentage = context.raw.toFixed(2);
-                          return `${context.label}: ${percentage}%`;
-                      }
-                  }
-              }
-          }
-      }
-  });
-  optionsContainer.innerHTML = "";
-  const blueButton2 = document.getElementById("blueButton2");
-  blueButton2.style.display = "inline";
-  blueButton2.style.textAlign = "center"
-};
-
-
-
-
-
 
 
 const FULL_DASH_ARRAY = 283;
@@ -308,11 +218,11 @@ document.getElementById("app").innerHTML = `
 `;
 
 function stopTimer() {
-clearInterval(timerInterval); // Ferma il timer
+clearInterval(timerInterval); 
 }
 
 function startTimer() {
-stopTimer(); // Ferma il timer precedente
+stopTimer(); 
 timePassed = 0;
 timeLeft = TIME_LIMIT;
 document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
@@ -336,8 +246,8 @@ timerInterval = setInterval(() => {
 }
 
 function onTimesUp() {
-stopTimer(); // Ferma il timer quando il tempo è scaduto
-nextQuestion(); // Passa alla domanda successiva
+stopTimer(); 
+nextQuestion(); 
 }
 
 function formatTime(time) {
@@ -385,3 +295,91 @@ document
 
 loadQuestion(currentQuestionIndex);
 startTimer();
+
+
+
+
+const endQuiz = () => {
+  
+
+
+  const correctPercentage = (score / questions.length) * 100;
+  const wrongPercentage = ((questions.length - score) / questions.length) * 100;
+  const correctAnswersN = score;
+  const wrongAnswers = questions.length - score;
+
+ 
+  const quizResults = {
+    correctPercentage: correctPercentage.toFixed(2),
+    wrongPercentage: wrongPercentage.toFixed(2),
+    correctAnswers: correctAnswersN,
+    wrongAnswers: wrongAnswers,
+    totalQuestions: questions.length,
+    passed: score > questions.length / 2
+  };
+
+  
+  localStorage.setItem("quizResults", JSON.stringify(quizResults));
+
+  
+
+  const goToResultsBtn = document.getElementById("go-to-results-btn");
+  goToResultsBtn.style.display = "inline"; 
+
+  const correctPercentageText = document.querySelector("#correct-percentage");
+  const correctAnswersNDisplay = document.querySelector("#correctNumber");
+  const wrongPercentageText = document.querySelector("#wrong-percentage");
+  const wrongAnswersN = document.querySelector("#wrongNumber");
+
+};
+ 
+function goToResultsPage() {
+  window.location.href = 'results.html'; 
+}
+
+  const resultChartDiv = document.getElementById('result-chart');
+
+ 
+  // Crea il grafico
+  const ctx = document.getElementById('result-chart').getContext('2d');
+  const resultChart = new Chart(ctx, {
+      type: 'doughnut', 
+      data: {
+          labels: ['Correct', 'Wrong'], 
+          datasets: [{
+              label: 'Quiz Results',
+              data: [correctPercentage, wrongPercentage], 
+              backgroundColor: ['#00FFFF', '#D20094'],
+              borderColor: ['#00FFFF', '#D20094'],
+              borderWidth: 2
+          }]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+              legend: {
+                  position: 'top',
+              },
+              tooltip: {
+                  callbacks: {
+                      label: (context) => {
+                          const percentage = context.raw.toFixed(2);
+                          return `${context.label}: ${percentage}%`;
+                      }
+                  }
+              }
+          }
+      }
+  });
+  
+  optionsContainer.innerHTML = "";
+  const blueButton2 = document.getElementById("blueButton2");
+  blueButton2.style.display = "inline";
+  blueButton2.style.textAlign = "center"
+;
+
+
+
+
+
