@@ -141,20 +141,43 @@ if (window.location.pathname.includes("test.html")) {
 
   // Controlla la risposta e disabilita i bottoni
   const checkAnswer = (selectedAnswer, correctAnswer) => {
+    if (!optionsContainer || !questionText) {
+        console.error('Elementi del DOM non trovati.');
+        return;
+    }
 
+    // Disabilita tutti i pulsanti delle opzioni
     Array.from(optionsContainer.children).forEach((button) => {
-      button.disabled = true;
+        button.disabled = true;
+
+        // Colora la risposta selezionata
+        if (button.textContent === selectedAnswer) {
+            if (selectedAnswer === correctAnswer) {
+                button.style.backgroundColor = 'green';
+            } else {
+                button.style.backgroundColor = 'red';
+            }
+        }
+
+        // Colora la risposta corretta
+        if (button.textContent === correctAnswer) {
+            button.style.backgroundColor = 'green';
+        }
     });
 
-    // Modifica il puteggio se corretto
+    // Aggiorna il punteggio se la risposta è corretta
     if (selectedAnswer === correctAnswer) {
-      score += 1;
+        score += 1;
     }
-    setTimeout(nextQuestion, 1000);
 
-    questionText.style.display = "none";
-    optionsContainer.style.display = "none";
-  };
+    // Passa alla prossima domanda dopo 1 secondo
+    setTimeout(() => {
+        questionText.style.display = "none";
+        optionsContainer.style.display = "none";
+        nextQuestion();
+    }, 1000);
+};
+
 
   // Domanda successiva
   const nextQuestion = () => {
