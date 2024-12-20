@@ -109,7 +109,7 @@ if (window.location.pathname.includes("test.html")) {
   const questionNumDisplay = document.querySelector("#question-number");
 
   // Mischia le risposte
-  const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);;
+  const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 
   // Imposta la domanda
   const loadQuestion = (i) => {
@@ -128,7 +128,7 @@ if (window.location.pathname.includes("test.html")) {
     // Crea i bottoni
     answers.forEach((answer) => {
       const button = document.createElement("button");
-      button.classList.add('answerButton')  //MODIFICA !!!!
+      button.classList.add('answerButton')
       button.textContent = answer;
       button.onclick = () => checkAnswer(answer, question.correct_answer);
       optionsContainer.appendChild(button);
@@ -168,6 +168,7 @@ if (window.location.pathname.includes("test.html")) {
 
   };
 
+//timer
 
   const FULL_DASH_ARRAY = 283;
   const WARNING_THRESHOLD = 10;
@@ -193,9 +194,11 @@ if (window.location.pathname.includes("test.html")) {
   let timerInterval = null;
   let remainingPathColor = COLOR_CODES.info.color;
 
+  //crea html per il timer
+
   document.getElementById("app").innerHTML = `
 <div class="base-timer">
-<svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <g class="base-timer__circle">
     <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
     <path
@@ -210,12 +213,10 @@ if (window.location.pathname.includes("test.html")) {
       "
     ></path>
   </g>
-</svg>
-<span id="upperTimerSTR">seconds</span>
-<span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-  )}</span>
-<span id="lowerTimerSTR">remaining</span>
+  </svg>
+  <span id="upperTimerSTR">seconds</span>
+  <span id="base-timer-label" class="base-timer__label">${formatTime( timeLeft )}</span>
+  <span id="lowerTimerSTR">remaining</span>
 </div>
 `;
 
@@ -252,13 +253,14 @@ if (window.location.pathname.includes("test.html")) {
     nextQuestion();
   }
 
+  // impostazioni del timer
+
   function formatTime(time) {
 
     let seconds = time % 60;
     if (seconds < 10) {
       seconds = `0${seconds}`;
     }
-
     return `${seconds}`;
   }
 
@@ -299,6 +301,8 @@ if (window.location.pathname.includes("test.html")) {
   startTimer();
 
 
+//risultati
+
   const endQuiz = () => {
     const correctPercentage = (score / questions.length) * 100;
     const wrongPercentage = ((questions.length - score) / questions.length) * 100;
@@ -327,8 +331,7 @@ const correctAnswersNDisplay = document.querySelector("#correctNumber");
 const wrongPercentageText = document.querySelector("#wrong-percentage");
 const wrongAnswersN = document.querySelector("#wrongNumber");
 const blueButton2 = document.getElementById("blueButton2");
-blueButton2.style.display = "inline";
-blueButton2.style.textAlign = "center";
+
 
 
 if (window.location.pathname.includes("results.html")) {
