@@ -153,15 +153,15 @@ if (window.location.pathname.includes("test.html")) {
         // Colora la risposta selezionata
         if (button.textContent === selectedAnswer) {
             if (selectedAnswer === correctAnswer) {
-                button.style.backgroundColor = 'green';
+                button.style.background = 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box, linear-gradient(to top, #11998e, #38ef7d) border-box';
             } else {
-                button.style.backgroundColor = 'red';
+                button.style.background = 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box, linear-gradient(to top, #f80759, #bc4e9c) border-box';
             }
         }
 
         // Colora la risposta corretta
         if (button.textContent === correctAnswer) {
-            button.style.backgroundColor = 'green';
+            button.style.background = 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box, linear-gradient(to top, #11998e, #38ef7d) border-box';
         }
     });
 

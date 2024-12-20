@@ -190,10 +190,6 @@ footer {
   padding: 2em 0;
 }
 
-/*EXTRA: checkbox spunta a v*/
-
-/*TEST PAGE*/
-
 #countdown-container {
   display: inline;
   float: right;
@@ -204,16 +200,10 @@ footer {
   text-align: center;
 }
 
-/* #testMain {
-  padding-top: 2rem;
-  Da aggiustare successivamente
-} */
-
 #question-text {
   padding: 1em;
   margin: 0 10rem;
   line-height: 4rem;
-  /*Da aggiustare successivamente*/
 }
 
 .answerButton {
@@ -234,8 +224,6 @@ footer {
   background: linear-gradient(rgba(144, 0, 128, 0.8), rgba(210, 0, 148, 0.9)) padding-box,
     linear-gradient(to top, rgba(144, 0, 128, 0.8), rgba(210, 0, 148, 0.8)) border-box
 }
-
-/*Stanislav: REVIEW STARS*/
 
 .star {
   display: inline-block;
