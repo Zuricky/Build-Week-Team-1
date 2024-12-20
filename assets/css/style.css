@@ -271,11 +271,11 @@ textarea::placeholder {
   margin-left: 45%;
 }
 
-#blueButton2 {
+/*#blueButton2 {
   margin: 2rem;
   margin-right: 45%;
   margin-left: 45%;
-}
+}*/
 
 #reviewTitle {
   color: white;
@@ -338,9 +338,23 @@ textarea::placeholder {
   margin-top: 10;
   padding: 3em;
   line-height: 1em;
-
+  text-align: center;
 }
 
   #result-chart {
     display: none; 
+}
+
+#reviewButton {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 0.7rem 2.7rem;
+  border: 1px white solid;
+  cursor: pointer;
+  margin: 0 2rem;
+  margin-right: 45%;
+  margin-left: 45%;
 }
